@@ -101,7 +101,7 @@ tags
 **/nbproject/Package-*.bash
 build/
 nbbuild/
-dist/
+#dist/
 nbdist/
 .nb-gradle/
 
@@ -133,7 +133,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+#dist/
 downloads/
 eggs/
 .eggs/
