@@ -27,4 +27,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: openTCS-4.18.0-SNAPSHOT-bin
-        path: build/install/openTCS
+        path: build/distributions/openTCS-4.18.0-SNAPSHOT-bin.zip
