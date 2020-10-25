@@ -16,7 +16,12 @@ import java.util.Objects;
 import static java.util.Objects.requireNonNull;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
+
+import org.opentcs.access.LocalKernel;
+import org.opentcs.data.model.Point;
 import org.opentcs.data.model.Vehicle;
+import org.opentcs.data.order.DriveOrder;
+import org.opentcs.data.order.Route;
 import org.opentcs.drivers.vehicle.management.VehicleProcessModelTO;
 import static org.opentcs.util.Assertions.checkInRange;
 import org.opentcs.util.CyclicTask;
@@ -88,6 +93,57 @@ public abstract class BasicVehicleCommAdapter
    * been executed by it, yet.
    */
   private final Queue<MovementCommand> sentQueue = new LinkedBlockingQueue<>();
+
+  public DriveOrder currentDriveOrder = null;
+
+  public DriveOrder sendDriveOrder = null;
+
+  private Route route = null;
+
+  private LocalKernel kernel;
+
+  private List<Point> pointLists;
+
+  public LocalKernel getKernel() {
+    if(this.kernel == null) { return null; }
+    return kernel;
+  }
+
+  public void setKernel( LocalKernel localkernel) {
+    this.kernel = localkernel;
+    return;
+  }
+
+  public void setPointLists(List<Point> Points) { this.pointLists = Points; }
+
+  public List<Point> getPointLists() { return this.pointLists; }
+
+
+  public DriveOrder getcurrentDriveOrder() {
+    return currentDriveOrder;
+  }
+
+
+  public void setcurrentDriveOrder(DriveOrder currentDriveOrder1) {
+    this.currentDriveOrder = currentDriveOrder1;
+    return;
+  }
+
+  public void abortDriveOrder() {
+    this.currentDriveOrder = null;
+    return;
+  }
+
+
+  public void setRoute(Route route1) {
+    route = route1;
+    return;
+  }
+
+
+  public Route getRoute() {
+    return this.route;
+  }
 
   /**
    * Creates a new instance.
