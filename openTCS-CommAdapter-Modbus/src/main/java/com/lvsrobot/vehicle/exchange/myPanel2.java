@@ -1,6 +1,13 @@
 /*
  * Created by JFormDesigner on Fri Jun 26 11:20:47 CST 2020
  */
+/**
+ * Copyright (c) The openTCS Authors.
+ *
+ * This program is free software and subject to the MIT license. (For details,
+ * see the licensing information (LICENSE.txt) you should have received with
+ * this copy of the software.)
+ */
 
 package com.lvsrobot.vehicle.exchange;
 
